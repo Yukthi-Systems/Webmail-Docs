@@ -14,8 +14,9 @@ const config: Config = {
     v4: true,
   },
 
-  url: `https://${GITHUB_ORG}.github.io`,
-  baseUrl: `/${GITHUB_REPO}/`,
+
+  url: 'https://webmail-docs.yukthi.net',
+  baseUrl: '/',
 
   organizationName: GITHUB_ORG,
   projectName: GITHUB_REPO,

@@ -1,0 +1,10 @@
+services:
+  webmail-docs:
+    # build: .
+    image: rjyspl/webmail-docs:latest
+    container_name: webmail-docs
+
+    ports:
+      - '127.0.0.1:8683:3000'
+
+    restart: always
