@@ -1,0 +1,71 @@
+/**
+ * Global theme overrides. Webmail uses a single solid indigo accent instead of
+ * Docusaurus's default green — deliberately one flat color, not a gradient, so the
+ * site doesn't read as generic AI-generated-SaaS design.
+ */
+
+:root {
+  --ifm-color-primary: #4f46e5;
+  --ifm-color-primary-dark: #4338ca;
+  --ifm-color-primary-darker: #3c33b8;
+  --ifm-color-primary-darkest: #322a97;
+  --ifm-color-primary-light: #6366f1;
+  --ifm-color-primary-lighter: #7274f2;
+  --ifm-color-primary-lightest: #9698f6;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(79, 70, 229, 0.1);
+
+  --webmail-accent: #4f46e5;
+  --webmail-hero-bg: #f7f8fc;
+  --webmail-surface: #ffffff;
+  --webmail-border: rgba(15, 23, 42, 0.08);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6d78f5;
+  --ifm-color-primary-darker: #5f6bf3;
+  --ifm-color-primary-darkest: #3f4cef;
+  --ifm-color-primary-light: #95a0f9;
+  --ifm-color-primary-lighter: #a2acfa;
+  --ifm-color-primary-lightest: #c8cefc;
+  --docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.15);
+
+  --webmail-accent: #818cf8;
+  --webmail-hero-bg: #0b0e1a;
+  --webmail-surface: #12162a;
+  --webmail-border: rgba(255, 255, 255, 0.08);
+
+  --ifm-background-color: #0b0e1a;
+  --ifm-background-surface-color: #12162a;
+  --ifm-navbar-background-color: #0b0e1acc;
+  --ifm-footer-background-color: #080a14;
+}
+
+/* Decorative homepage backgrounds — kept as plain CSS because they're a stack of
+   several comma-separated gradients plus a mask-image, which is unreadable (and in
+   the mask case, unsupported) as Tailwind arbitrary-value utilities. Both are a single
+   accent color at low opacity, not a two-color gradient blend. */
+.homepage-hero-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(52% 60% at 78% 8%, color-mix(in srgb, var(--webmail-accent) 14%, transparent), transparent 70%),
+    radial-gradient(40% 50% at 12% 92%, color-mix(in srgb, var(--webmail-accent) 8%, transparent), transparent 70%),
+    linear-gradient(var(--webmail-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--webmail-border) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 56px 56px, 56px 56px;
+  mask-image: linear-gradient(#000 55%, transparent);
+  -webkit-mask-image: linear-gradient(#000 55%, transparent);
+  opacity: 0.6;
+}
+
+.homepage-cta-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 90% at 50% -20%, color-mix(in srgb, var(--webmail-accent) 18%, transparent), transparent 70%),
+    radial-gradient(45% 70% at 85% 110%, color-mix(in srgb, var(--webmail-accent) 10%, transparent), transparent 70%);
+}
