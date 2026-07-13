@@ -1,49 +1,48 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import {DOCS_GITHUB_ORG as GITHUB_ORG, DOCS_GITHUB_REPO as GITHUB_REPO} from './src/constants/github';
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
+import {
+  DOCS_GITHUB_ORG as GITHUB_ORG,
+  DOCS_GITHUB_REPO as GITHUB_REPO,
+} from "./src/constants/github";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Webmail',
-  tagline: 'A fast, modern, open-source webmail client.',
-  favicon: 'img/favicon.ico',
+  title: "Webmail",
+  tagline: "A fast, modern, open-source webmail client.",
+  favicon: "img/favicon.ico",
 
   future: {
     v4: true,
   },
 
-
-  url: 'https://webmail-docs.yukthi.net',
-  baseUrl: '/',
+  url: "https://webmail-docs.yukthi.net",
+  baseUrl: "/",
 
   organizationName: GITHUB_ORG,
   projectName: GITHUB_REPO,
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: "throw",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          // No explicit `id` — this is the "default" docs instance. The search
-          // plugin's navbar SearchBar hardcodes a lookup against the default-id
-          // instance, so this one has to stay unnamed even though it's UI-specific.
-          path: 'docs/ui',
-          routeBasePath: 'docs/ui',
-          sidebarPath: './sidebars.ts',
+          path: "docs/ui",
+          routeBasePath: "docs/ui",
+          sidebarPath: "./sidebars.ts",
           editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/tree/main/`,
         },
         blog: false,
         theme: {
-          customCss: ['./src/css/tailwind.css', './src/css/custom.css'],
+          customCss: ["./src/css/tailwind.css", "./src/css/custom.css"],
         },
       } satisfies Preset.Options,
     ],
@@ -51,35 +50,35 @@ const config: Config = {
 
   plugins: [
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'api',
-        path: 'docs/api',
-        routeBasePath: 'docs/api',
-        sidebarPath: './sidebarsApi.ts',
+        id: "api",
+        path: "docs/api",
+        routeBasePath: "docs/api",
+        sidebarPath: "./sidebarsApi.ts",
         editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/tree/main/`,
       },
     ],
     [
-      '@docusaurus/plugin-content-docs',
+      "@docusaurus/plugin-content-docs",
       {
-        id: 'worker',
-        path: 'docs/worker',
-        routeBasePath: 'docs/worker',
-        sidebarPath: './sidebarsWorker.ts',
+        id: "worker",
+        path: "docs/worker",
+        routeBasePath: "docs/worker",
+        sidebarPath: "./sidebarsWorker.ts",
         editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/tree/main/`,
       },
     ],
-    './plugins/tailwind-config.js',
+    "./plugins/tailwind-config.js",
   ],
 
   themes: [
     [
-      '@easyops-cn/docusaurus-search-local',
+      "@easyops-cn/docusaurus-search-local",
       {
         hashed: true,
         // Index all three docs plugin instances, not just the default one.
-        docsRouteBasePath: ['docs/ui', 'docs/api', 'docs/worker'],
+        docsRouteBasePath: ["docs/ui", "docs/api", "docs/worker"],
         indexBlog: false,
         indexPages: true,
       },
@@ -88,66 +87,66 @@ const config: Config = {
 
   themeConfig: {
     // TODO: replace with a real social card once branding/screenshots are final.
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     colorMode: {
-      defaultMode: 'dark',
+      defaultMode: "dark",
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Webmail',
+      title: "Webmail",
       logo: {
-        alt: 'Webmail Logo',
-        src: 'img/logo.svg',
+        alt: "Webmail Logo",
+        src: "img/logo.svg",
       },
       items: [
         {
-          type: 'dropdown',
-          label: 'Docs',
-          position: 'left',
+          type: "dropdown",
+          label: "Docs",
+          position: "left",
           items: [
-            {label: 'UI', to: '/docs/ui'},
-            {label: 'API', to: '/docs/api'},
-            {label: 'RMQ Worker', to: '/docs/worker'},
+            { label: "UI", to: "/docs/ui" },
+            { label: "API", to: "/docs/api" },
+            { label: "RMQ Worker", to: "/docs/worker" },
           ],
         },
-        {to: '/open-source', label: 'Open Source', position: 'left'},
+        { to: "/open-source", label: "Open Source", position: "left" },
         {
           href: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}`,
-          label: 'GitHub',
-          position: 'right',
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
-            {label: 'UI', to: '/docs/ui'},
-            {label: 'API', to: '/docs/api'},
-            {label: 'RMQ Worker', to: '/docs/worker'},
+            { label: "UI", to: "/docs/ui" },
+            { label: "API", to: "/docs/api" },
+            { label: "RMQ Worker", to: "/docs/worker" },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
-            {label: 'Open Source & Contributing', to: '/open-source'},
+            { label: "Open Source & Contributing", to: "/open-source" },
             {
-              label: 'GitHub Discussions',
+              label: "GitHub Discussions",
               href: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/discussions`,
             },
             {
-              label: 'Issues',
+              label: "Issues",
               href: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/issues`,
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'GitHub',
+              label: "GitHub",
               href: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}`,
             },
           ],
