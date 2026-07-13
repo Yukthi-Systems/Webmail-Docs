@@ -33,7 +33,9 @@ const config: Config = {
       'classic',
       {
         docs: {
-          id: 'ui',
+          // No explicit `id` — this is the "default" docs instance. The search
+          // plugin's navbar SearchBar hardcodes a lookup against the default-id
+          // instance, so this one has to stay unnamed even though it's UI-specific.
           path: 'docs/ui',
           routeBasePath: 'docs/ui',
           sidebarPath: './sidebars.ts',
@@ -69,6 +71,19 @@ const config: Config = {
       },
     ],
     './plugins/tailwind-config.js',
+  ],
+
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        // Index all three docs plugin instances, not just the default one.
+        docsRouteBasePath: ['docs/ui', 'docs/api', 'docs/worker'],
+        indexBlog: false,
+        indexPages: true,
+      },
+    ],
   ],
 
   themeConfig: {
