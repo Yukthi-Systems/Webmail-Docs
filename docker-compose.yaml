@@ -1,6 +1,5 @@
 services:
   webmail-docs:
-    # build: .
     image: rjyspl/webmail-docs:latest
     container_name: webmail-docs
 
