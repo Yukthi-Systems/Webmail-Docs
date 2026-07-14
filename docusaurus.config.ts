@@ -39,6 +39,8 @@ const config: Config = {
           routeBasePath: "docs/ui",
           sidebarPath: "./sidebars.ts",
           editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/tree/main/`,
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
@@ -57,6 +59,8 @@ const config: Config = {
         routeBasePath: "docs/api",
         sidebarPath: "./sidebarsApi.ts",
         editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/tree/main/`,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
       },
     ],
     [
@@ -67,6 +71,8 @@ const config: Config = {
         routeBasePath: "docs/worker",
         sidebarPath: "./sidebarsWorker.ts",
         editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/tree/main/`,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
       },
     ],
     "./plugins/tailwind-config.js",
