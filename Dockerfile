@@ -11,6 +11,11 @@ COPY package*.json ./
 RUN npm install
 
 # Copy the application source code into the container
+# Note: this must include .git — the docs plugin's "last updated by/at" feature reads
+# git history at build time, and errors out entirely if .git isn't present at all.
+# When building via `docker/build-push-action`/buildx, that requires passing
+# --build-arg BUILDKIT_CONTEXT_KEEP_GIT_DIR=1 (see the GitHub Actions workflow),
+# otherwise BuildKit strips .git from the context even without a .dockerignore rule.
 COPY . .
 
 # Build the application
