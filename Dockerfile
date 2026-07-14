@@ -4,6 +4,11 @@ FROM node:21.5-alpine3.18 AS builder
 # Set the working directory for the build stage
 WORKDIR /app
 
+# git isn't installed in the base alpine image by default. The docs plugin's
+# "last updated by/at" feature shells out to the git CLI at build time and hard-fails
+# the whole build if it can't find one — not just for the specific file it's checking.
+RUN apk add --no-cache git
+
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
@@ -13,10 +18,16 @@ RUN npm install
 # Copy the application source code into the container
 # Note: this must include .git — the docs plugin's "last updated by/at" feature reads
 # git history at build time, and errors out entirely if .git isn't present at all.
-# When building via `docker/build-push-action`/buildx, that requires passing
-# --build-arg BUILDKIT_CONTEXT_KEEP_GIT_DIR=1 (see the GitHub Actions workflow),
-# otherwise BuildKit strips .git from the context even without a .dockerignore rule.
 COPY . .
+
+# TEMPORARY DIAGNOSTIC — remove once the .git-in-build-context issue is confirmed/fixed.
+RUN echo "--- .git diagnostic ---" && \
+    ls -la /app | head -20 && \
+    echo "--- /app/.git contents (if any) ---" && \
+    (ls -la /app/.git 2>&1 || echo "NO /app/.git DIRECTORY") && \
+    echo "--- git rev-parse check ---" && \
+    (git -C /app rev-parse --is-inside-work-tree 2>&1 || echo "git rev-parse FAILED") && \
+    (which git || echo "no git binary in image")
 
 # Build the application
 RUN npm run build
