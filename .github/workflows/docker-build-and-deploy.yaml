@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: Het-8v-16G
+    runs-on: ubuntu-latest
     outputs:
       tag: ${{ steps.get_tag.outputs.tag }}
     steps:
@@ -37,6 +37,8 @@ jobs:
         with:
           context: .
           platforms: linux/amd64,linux/arm64
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           push: true
           sbom: true
           provenance: true
