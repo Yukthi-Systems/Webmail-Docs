@@ -15,7 +15,7 @@ const TABS: Tab[] = [
     label: 'Docker',
     commands: [
       `git clone ${WEBMAIL_UI_REPO_URL}.git`,
-      'cd webmail-ui',
+      'cd WebMail-UI',
       'docker compose up -d',
     ],
     note: 'Starts the UI container. A full self-hosted setup also needs the API, a Postgres + Memcached + RabbitMQ backend, and a mail server — see the docs for wiring it all together.',
@@ -23,7 +23,7 @@ const TABS: Tab[] = [
   {
     id: 'source',
     label: 'From source',
-    commands: [`git clone ${WEBMAIL_UI_REPO_URL}.git`, 'cd webmail-ui', 'npm install', 'npm run dev'],
+    commands: [`git clone ${WEBMAIL_UI_REPO_URL}.git`, 'cd WebMail-UI', 'npm install', 'npm run dev'],
     note: 'Good for local development against an existing API instance — not a full self-hosted deployment on its own.',
   },
 ];

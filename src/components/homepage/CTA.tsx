@@ -1,7 +1,7 @@
 import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import {ArrowIcon, GitHubIcon, GhostButton, PrimaryButton} from './shared';
-import {DOCS_GITHUB_URL} from '@site/src/constants/github';
+import {WEBMAIL_UI_REPO_URL} from '@site/src/constants/github';
 
 export default function CTA(): ReactNode {
   return (
@@ -19,7 +19,7 @@ export default function CTA(): ReactNode {
           <PrimaryButton to="/docs/ui">
             Get started <ArrowIcon />
           </PrimaryButton>
-          <GhostButton to={DOCS_GITHUB_URL}>
+          <GhostButton to={WEBMAIL_UI_REPO_URL}>
             <GitHubIcon /> Star on GitHub
           </GhostButton>
         </div>

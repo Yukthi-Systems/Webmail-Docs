@@ -4,6 +4,7 @@ import type * as Preset from "@docusaurus/preset-classic";
 import {
   DOCS_GITHUB_ORG as GITHUB_ORG,
   DOCS_GITHUB_REPO as GITHUB_REPO,
+  DISCORD_URL,
 } from "./src/constants/github";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -75,6 +76,18 @@ const config: Config = {
         showLastUpdateTime: true,
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "bimi",
+        path: "docs/bimi",
+        routeBasePath: "docs/bimi",
+        sidebarPath: "./sidebarsBimi.ts",
+        editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/tree/main/`,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
     "./plugins/tailwind-config.js",
   ],
 
@@ -83,8 +96,8 @@ const config: Config = {
       "@easyops-cn/docusaurus-search-local",
       {
         hashed: true,
-        // Index all three docs plugin instances, not just the default one.
-        docsRouteBasePath: ["docs/ui", "docs/api", "docs/worker"],
+        // Index all four docs plugin instances, not just the default one.
+        docsRouteBasePath: ["docs/ui", "docs/api", "docs/worker", "docs/bimi"],
         indexBlog: false,
         indexPages: true,
       },
@@ -113,9 +126,15 @@ const config: Config = {
             { label: "UI", to: "/docs/ui" },
             { label: "API", to: "/docs/api" },
             { label: "RMQ Worker", to: "/docs/worker" },
+            { label: "BIMI API", to: "/docs/bimi" },
           ],
         },
         { to: "/open-source", label: "Open Source", position: "left" },
+        {
+          href: DISCORD_URL,
+          label: "Discord",
+          position: "right",
+        },
         {
           href: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}`,
           label: "GitHub",
@@ -132,12 +151,14 @@ const config: Config = {
             { label: "UI", to: "/docs/ui" },
             { label: "API", to: "/docs/api" },
             { label: "RMQ Worker", to: "/docs/worker" },
+            { label: "BIMI API", to: "/docs/bimi" },
           ],
         },
         {
           title: "Community",
           items: [
             { label: "Open Source & Contributing", to: "/open-source" },
+            { label: "Discord", href: DISCORD_URL },
             {
               label: "GitHub Discussions",
               href: `https://github.com/${GITHUB_ORG}/${GITHUB_REPO}/discussions`,

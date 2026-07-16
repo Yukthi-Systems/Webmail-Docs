@@ -21,13 +21,14 @@ See the full license text in [`LICENSE`](https://github.com/Yukthi-Systems/Webma
 
 ## Contributing
 
-Issues and pull requests are welcome across all three repos — UI, API, and the RMQ
-worker. Each has its own contributing notes:
+Issues and pull requests are welcome across all four repos — UI, API, the RMQ worker,
+and the [BIMI API](/docs/bimi). Each has its own contributing notes:
 
 - [UI Contributing guide](/docs/ui/contributing)
 
 Start with an issue if you're planning something non-trivial, so the approach can be
-discussed before you put the work in.
+discussed before you put the work in. Or drop into [Discord](https://discord.gg/29zTxvque)
+if you'd rather talk it through first.
 
 ## Rewards for serious contributors
 

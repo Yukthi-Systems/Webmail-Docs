@@ -63,8 +63,9 @@ instead of the default Webmail UI look):
 4. Save.
 
 Unlike the rest of the admin console, branding assets are uploaded to a **separate
-service** — a DNS/branding microservice configured independently of the main API (see
-`DNS_API_URL` / `DNS_API_KEY` in [Configuration](./configuration.md)).
+service** — the [BIMI API](/docs/bimi), configured independently of the main API (see
+`DNS_API_URL` / `DNS_API_KEY` in [Configuration](./configuration.md)). See
+[BIMI API: Branding](/docs/bimi/reference/branding) for what this tab actually calls.
 
 ## Should I expose this in production?
 

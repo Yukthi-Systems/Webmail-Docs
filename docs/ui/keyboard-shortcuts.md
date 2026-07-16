@@ -7,7 +7,7 @@ sidebar_position: 5
 # Keyboard Shortcuts
 
 Webmail UI ships with a Gmail-style keyboard shortcut system, implemented in
-[`useKeyboardNavigation`](https://github.com/your-org/webmail-ui/blob/main/src/hooks/useKeyboardShortcuts.tsx)
+[`useKeyboardNavigation`](https://github.com/Yukthi-Systems/WebMail-UI/blob/main/src/hooks/useKeyboardShortcuts.tsx)
 and wired up in the mailbox view. This page documents both the shortcuts themselves and
 the rules that govern when each one fires, since a few of them behave conditionally.
 

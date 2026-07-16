@@ -2,7 +2,7 @@ import type {ReactNode} from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {AccentText, ArrowIcon, GitHubIcon, Kbd, PrimaryButton, GhostButton} from './shared';
-import {DOCS_GITHUB_URL} from '@site/src/constants/github';
+import {DOCS_GITHUB_URL, WEBMAIL_UI_REPO_URL} from '@site/src/constants/github';
 
 const VERSION = 'v2.7.8';
 
@@ -202,7 +202,7 @@ export default function Hero(): ReactNode {
             <PrimaryButton to="/docs/ui">
               Get started <ArrowIcon />
             </PrimaryButton>
-            <GhostButton to={DOCS_GITHUB_URL}>
+            <GhostButton to={WEBMAIL_UI_REPO_URL}>
               <GitHubIcon /> View on GitHub
             </GhostButton>
           </div>

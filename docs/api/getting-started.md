@@ -27,8 +27,8 @@ mail server are still your responsibility to point it at.
 ## Clone and install
 
 ```bash
-git clone https://github.com/your-org/webmail-api.git
-cd webmail-api
+git clone https://github.com/Yukthi-Systems/WebMail-API.git
+cd WebMail-API
 python3 -m venv virtualenv
 source virtualenv/bin/activate   # on Windows: virtualenv\Scripts\activate
 pip install -r requirements.txt

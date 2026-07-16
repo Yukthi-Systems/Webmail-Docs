@@ -15,8 +15,8 @@ sidebar_position: 2
 ## Clone and install
 
 ```bash
-git clone https://github.com/your-org/webmail-ui.git
-cd webmail-ui
+git clone https://github.com/Yukthi-Systems/WebMail-UI.git
+cd WebMail-UI
 npm install
 ```
 

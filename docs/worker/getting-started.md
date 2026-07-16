@@ -17,8 +17,8 @@ sidebar_position: 2
 ## Clone and build
 
 ```bash
-git clone https://github.com/your-org/rmq-webmail-composer.git
-cd rmq-webmail-composer
+git clone https://github.com/Yukthi-Systems/WebMail-RMQ-Worker.git
+cd WebMail-RMQ-Worker
 go mod tidy
 go build -o consumer ./cmd/consumer
 ```

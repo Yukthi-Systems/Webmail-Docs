@@ -26,11 +26,11 @@ Copy `.env.example` to `.env` and adjust as needed for local development.
 ### Admin console / branding service
 
 These are only used by the [Admin Console](./admin-panel.md)'s Branding tab, which talks
-to a separate microservice rather than the main API:
+to the [BIMI API](/docs/bimi) rather than the main API:
 
 | Variable | Description |
 |---|---|
-| `VITE_DNS_API_URL` | Base URL of the branding/DNS microservice |
+| `VITE_DNS_API_URL` | Base URL of the [BIMI API](/docs/bimi) instance |
 | `VITE_DNS_API_KEY` | Shared API key for that service (sent as `x-api-key`) |
 
 :::note
