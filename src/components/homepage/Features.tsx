@@ -22,7 +22,7 @@ const cardBase =
 
 export default function Features(): ReactNode {
   return (
-    <section className="tw-mx-auto tw-max-w-6xl tw-px-4 tw-py-24">
+    <section className="tw-mx-auto tw-max-w-6xl tw-px-4 tw-py-24 sm:tw-px-6 lg:tw-px-8">
       <SectionHead
         eyebrow="Everything mail should do"
         title={

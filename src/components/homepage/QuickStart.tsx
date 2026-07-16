@@ -44,9 +44,9 @@ export default function QuickStart(): ReactNode {
   };
 
   return (
-    <section className="tw-border-y tw-border-slate-200 tw-bg-slate-50 tw-px-4 tw-py-24 dark:tw-border-slate-800 dark:tw-bg-slate-900/40">
-      <div className="tw-mx-auto tw-grid tw-max-w-6xl tw-items-center tw-gap-12 md:tw-grid-cols-[44%_56%]">
-        <div>
+    <section className="tw-border-y tw-border-slate-200 tw-bg-slate-50 tw-px-4 tw-py-24 dark:tw-border-slate-800 dark:tw-bg-slate-900/40 sm:tw-px-6 lg:tw-px-8">
+      <div className="tw-mx-auto tw-grid tw-max-w-6xl tw-items-center tw-gap-10 lg:tw-gap-12 lg:tw-grid-cols-[44fr_56fr]">
+        <div className="tw-min-w-0">
           <SectionHead
             eyebrow="Self-host it yourself"
             title={
@@ -61,7 +61,7 @@ export default function QuickStart(): ReactNode {
           </GhostButton>
         </div>
 
-        <div className="tw-overflow-hidden tw-rounded-2xl tw-border tw-border-slate-200 tw-bg-white tw-shadow-2xl tw-shadow-slate-900/10 dark:tw-border-slate-700 dark:tw-bg-slate-900 dark:tw-shadow-black/40">
+        <div className="tw-min-w-0 tw-overflow-hidden tw-rounded-2xl tw-border tw-border-slate-200 tw-bg-white tw-shadow-2xl tw-shadow-slate-900/10 dark:tw-border-slate-700 dark:tw-bg-slate-900 dark:tw-shadow-black/40">
           <div className="tw-flex tw-items-center tw-gap-1.5 tw-border-b tw-border-slate-200 tw-bg-slate-50 tw-px-3.5 tw-py-2.5 dark:tw-border-slate-700 dark:tw-bg-slate-800/60">
             <span className="tw-h-2.5 tw-w-2.5 tw-rounded-full tw-bg-slate-300 dark:tw-bg-slate-600" />
             <span className="tw-h-2.5 tw-w-2.5 tw-rounded-full tw-bg-slate-300 dark:tw-bg-slate-600" />

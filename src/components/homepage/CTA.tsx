@@ -5,7 +5,7 @@ import {WEBMAIL_UI_REPO_URL} from '@site/src/constants/github';
 
 export default function CTA(): ReactNode {
   return (
-    <section className="tw-px-4 tw-pt-20 tw-pb-28">
+    <section className="tw-px-4 tw-pt-20 tw-pb-28 sm:tw-px-6 lg:tw-px-8">
       <div className="tw-relative tw-mx-auto tw-max-w-4xl tw-overflow-hidden tw-rounded-3xl tw-border tw-border-slate-200 tw-bg-white tw-px-8 tw-py-16 tw-text-center dark:tw-border-slate-700 dark:tw-bg-slate-900">
         <div className="homepage-cta-glow" aria-hidden="true" />
         <h2 className="tw-relative tw-font-display tw-text-3xl tw-font-bold tw-tracking-tight tw-text-slate-900 dark:tw-text-white md:tw-text-4xl">

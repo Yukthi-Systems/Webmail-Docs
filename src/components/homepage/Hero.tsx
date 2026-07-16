@@ -94,7 +94,7 @@ function HeroMock() {
           </ul>
         </aside>
 
-        <div className="tw-relative tw-p-1.5">
+        <div className="tw-relative tw-min-w-0 tw-p-1.5">
           {HERO_MAILS.map((m, i) => (
             <div
               key={m.subject}
@@ -171,11 +171,11 @@ export default function Hero(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
 
   return (
-    <header className="tw-relative tw-isolate tw-overflow-hidden tw-px-4 tw-pb-24 tw-pt-24 md:tw-pt-32">
+    <header className="tw-relative tw-isolate tw-overflow-hidden tw-px-4 tw-pb-24 tw-pt-24 sm:tw-px-6 md:tw-pt-32 lg:tw-px-8">
       <div className="homepage-hero-bg" aria-hidden="true" />
 
-      <div className="tw-mx-auto tw-grid tw-max-w-6xl tw-items-center tw-gap-14 md:tw-grid-cols-[46%_54%]">
-        <div>
+      <div className="tw-mx-auto tw-grid tw-max-w-6xl tw-items-center tw-gap-10 lg:tw-gap-14 lg:tw-grid-cols-[48fr_52fr]">
+        <div className="tw-min-w-0">
           <Link
             to={DOCS_GITHUB_URL}
             className="tw-inline-flex tw-items-center tw-gap-2 tw-rounded-full tw-border tw-border-slate-300 tw-bg-white tw-px-3.5 tw-py-1.5 tw-font-mono tw-text-xs tw-text-slate-700 tw-no-underline tw-transition hover:tw-border-indigo-400 hover:tw-text-indigo-600 hover:tw-no-underline dark:tw-border-slate-700 dark:tw-bg-slate-900 dark:tw-text-slate-200">
@@ -187,13 +187,13 @@ export default function Hero(): ReactNode {
             <ArrowIcon />
           </Link>
 
-          <h1 className="tw-mt-5 tw-font-display tw-text-4xl tw-font-extrabold tw-leading-[1.06] tw-tracking-tight tw-text-slate-900 dark:tw-text-white md:tw-text-6xl">
+          <h1 className="tw-mt-5 tw-font-display tw-text-4xl tw-font-extrabold tw-leading-[1.06] tw-tracking-tight tw-text-slate-900 dark:tw-text-white sm:tw-text-5xl md:tw-text-6xl lg:tw-text-5xl">
             The inbox you'd build
             <br />
             <AccentText>if you had the time.</AccentText>
           </h1>
 
-          <p className="tw-mt-4 tw-max-w-md tw-text-base tw-leading-relaxed tw-text-slate-500 dark:tw-text-slate-400">
+          <p className="tw-mt-4 tw-max-w-md tw-text-base tw-leading-relaxed tw-text-slate-500 dark:tw-text-slate-400 lg:tw-max-w-sm xl:tw-max-w-md">
             {siteConfig.tagline} Threaded conversations, a Tiptap-powered composer, and
             server-side Sieve filtering — yours to run, read, and fork.
           </p>
@@ -212,7 +212,7 @@ export default function Hero(): ReactNode {
           </p>
         </div>
 
-        <div>
+        <div className="tw-min-w-0">
           <HeroMock />
         </div>
       </div>
