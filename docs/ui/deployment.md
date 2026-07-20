@@ -21,8 +21,10 @@ docker run -p 3000:3000 webmail-ui
 ```yaml
 services:
   webmail-ui:
-    image: rjyspl/webmail-ui:latest
+    image: rjyspl/webmail-web-ui:latest
     container_name: webmail-ui
+    env_file:
+      - .env
     environment:
       - TZ=Asia/Kolkata
     ports:

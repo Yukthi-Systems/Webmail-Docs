@@ -8,7 +8,8 @@ sidebar_position: 2
 
 ## Prerequisites
 
-- Node.js 20+
+- Node.js 20+ (CI builds and tests against Node 24 — use that if you hit version-specific
+  issues)
 - npm
 - A running instance of the [Webmail API](/docs/api) (or its URL, if hosted elsewhere)
 
@@ -44,4 +45,6 @@ This starts Vite's dev server with hot module reloading.
 npm run build
 ```
 
-Output is written to `dist/`. See [Deployment](./deployment.md) for running it with Docker.
+This runs a full TypeScript project build (`tsc -b`) before invoking Vite, so it fails on
+type errors even if `npm run dev` looked fine. Output is written to `dist/`. See
+[Deployment](./deployment.md) for running it with Docker.
