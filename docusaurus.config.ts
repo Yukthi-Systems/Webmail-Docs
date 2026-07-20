@@ -112,10 +112,10 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: "Webmail",
       logo: {
-        alt: "Webmail Logo",
-        src: "img/logo.svg",
+        alt: "Yukthi Webmail",
+        src: "img/YWM-logo.png",
+        srcDark: "img/YWM-logo-dark.png",
       },
       items: [
         {

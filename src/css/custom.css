@@ -42,6 +42,10 @@
   --ifm-footer-background-color: #080a14;
 }
 
+.navbar__logo {
+  height: 2.75rem;
+}
+
 /* Decorative homepage backgrounds — kept as plain CSS because they're a stack of
    several comma-separated gradients plus a mask-image, which is unreadable (and in
    the mask case, unsupported) as Tailwind arbitrary-value utilities. Both are a single
