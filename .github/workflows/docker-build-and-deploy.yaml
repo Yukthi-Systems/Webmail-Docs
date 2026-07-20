@@ -13,8 +13,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      tag: ${{ steps.get_tag.outputs.tag }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,7 +41,7 @@ jobs:
             BUILDKIT_CONTEXT_KEEP_GIT_DIR=1
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           sbom: true
           provenance: true
           tags: |
@@ -52,6 +50,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
